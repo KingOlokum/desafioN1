@@ -1,0 +1,23 @@
+[
+  {
+    "id": "c6bff787021d2fa786b3408d",
+    "title": "Teclado",
+    "photo": "photo1",
+    "price": 1000,
+    "stock": 32
+  },
+  {
+    "id": "9d08a368d2444be8728c9042",
+    "title": "Computador",
+    "photo": "photo2",
+    "price": 15000,
+    "stock": 10
+  },
+  {
+    "id": "7131e18a62264acd4b335f42",
+    "title": "Monitor",
+    "photo": "photo3",
+    "price": 7000,
+    "stock": 10
+  }
+]

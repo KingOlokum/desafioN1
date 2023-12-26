@@ -1,5 +1,5 @@
-const fs = require("fs");
-const crypto = require("crypto");
+import fs from "fs";
+import crypto from "crypto";
 
 class ProductManager{
     static #products = [];
@@ -69,14 +69,16 @@ class ProductManager{
     }
     async destroy(id){
         try {
-            const one = ProductManager.#products.find((each) => each.id === id);
-            if(one){
-                ProductManager.#products.filter((each) => each.id !== one.id);
-                await fs.promises.writeFile(this.path, JSON.stringify(ProductManager.#products, null, 2));
-                console.log("Destroy ID:" + id );
-                return one;
+            let one = this.products.find((each) => each.id === id);
+            if(!one){
+                throw new Error("There isn't any product");
+                
             }else{
-                throw new Error("There is not product");
+                this.products = this.products.filter((each) => each.id !==id);
+                const jsonData = JSON.stringify(this.products, null, 2);
+                await fs.promises.writeFile(this.path, jsonData);
+                console.log("Delete " + id);
+                return id;
             }
         } catch (error) {
             console.log(error.message);
@@ -84,14 +86,9 @@ class ProductManager{
         }
     }
 }
-const products = new ProductManager("./fs/file/products.json");
-products.create({title:"Teclado", photo:"photo1", price: 1000, stock: 32});
-products.create({title:"Pantalla"});
+const products = new ProductManager("./data/fs/files/products.json");
+export default products;
 
-products.read();
 
-products.readOne("1");
-products.readOne("81a7bc7356140b5bf9232253");
 
-products.destroy("81a7bc7356140b5bf9232253");
-products.destroy("1");
+

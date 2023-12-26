@@ -1,6 +1,6 @@
-const fs = require("fs");
-const crypto = require("crypto");
-const { json } = require("react-router-dom");
+import fs from "fs";
+import crypto from "crypto";
+//const { json } = require("react-router-dom");
 
 class UserManager {
   static #users = [];
@@ -86,16 +86,8 @@ class UserManager {
   }
 }
 
-const users = new UserManager("./fs/file/users.json");
-users.create({ name: "igna" });
-users.create({ name: "Andres", photo: "image4", email: "andres@user.com" });
+const users = new UserManager("./data/fs/files/users.json");
+export default users;
 
-users.read();
-
-users.readOne("1asbc2");
-users.readOne("012b0fedeb43b7288c07538f");
-
-users.destroy("1asbc2");
-users.destroy("012b0fedeb43b7288c07538f");
 
 

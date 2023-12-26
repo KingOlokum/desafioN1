@@ -1,0 +1,20 @@
+[
+  {
+    "id": "07cf516f0b20cef4dce79f6e",
+    "name": "Emma",
+    "photo": "image1",
+    "email": "emma@user.com"
+  },
+  {
+    "id": "ebbf19622d6c24e737440fa2",
+    "name": "Isabella",
+    "photo": "image2",
+    "email": "isabella@user.com"
+  },
+  {
+    "id": "7466a1381e0abaa8bea0087f",
+    "name": "Tihago",
+    "photo": "image3",
+    "email": "tihago@user.com"
+  }
+]
